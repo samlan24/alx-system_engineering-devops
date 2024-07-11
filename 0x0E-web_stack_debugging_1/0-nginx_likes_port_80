@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 # debugging of nginx server
 
-apt-get update -y
-apt-get install -y nginx
-sudo service nginx enable
-sudo service nginx start
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
