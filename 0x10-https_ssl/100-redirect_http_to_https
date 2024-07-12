@@ -1,0 +1,22 @@
+defaults
+  mode http
+  timeout client 15s
+  timeout connect 10s
+  timeout server 15s
+  timeout http-request 10s
+global
+
+        ssl-dh-param-file /etc/haproxy/dhparams.pem
+
+frontend allan-tech-frontend
+    bind *:80
+    mode http
+    bind *:443 ssl crt /etc/haproxy/certs/www.allanwanjiku.tech.pem
+    redirect scheme https code 301 if !{ ssl_fc }
+    default_backend allan-tech-backend
+
+backend allan-tech-backend
+    balance roundrobin
+    server 322822-web-01 54.237.122.255:80 check
+    server 322822-web-02 54.87.238.241:80 check
+
