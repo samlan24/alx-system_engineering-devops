@@ -7,6 +7,6 @@ sudo vi /etc/default/ufw
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
-sudo ufw allow in 22 443 80
+sudo ufw allow 22 443 80
 
 sudo ufw enable
