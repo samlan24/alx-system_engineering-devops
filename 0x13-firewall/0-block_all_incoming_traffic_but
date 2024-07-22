@@ -1,0 +1,4 @@
+sudo apt install ufw
+sudo vi /etc/default/ufw
+sudo ufw allow in 22 443 80
+ufw enable
