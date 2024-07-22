@@ -1,4 +1,12 @@
-sudo apt install ufw
+sudo apt-get update
+
+sudo apt-get install -y ufw
+
 sudo vi /etc/default/ufw
+
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
 sudo ufw allow in 22 443 80
-ufw enable
+
+sudo ufw enable
